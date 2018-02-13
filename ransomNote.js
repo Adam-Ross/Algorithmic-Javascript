@@ -1,4 +1,6 @@
 // ransom note kata
+// If you're looking at this - watch the video of the making of it. link below.
+// https://www.youtube.com/watch?v=FavD-Js4SSg
 
 function ransomNote(note, magazineText) {
   var noteArr = note.split(' ');
