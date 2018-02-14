@@ -36,4 +36,4 @@ function reverse(str) {
 }
 
 str1 = 'reversed am I';
-console.log(reverse(str1));
+console.log(reverse(str1)); // Something is going wrong with reduce... Returning undefined... 
