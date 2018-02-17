@@ -1,0 +1,4 @@
+Basic Javascript study guide notes.
+
+all of these are used for iteration on an arry.
+  forEach, map, filter, find, some, every, reduce -- Learn them.
