@@ -27,4 +27,15 @@ function buildCharMap(str) {
   return charMap;
 }
 
-console.log(anagrams('the', 't H e!'));
+
+
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+// Helper method.
+function cleanString(str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
+
+// console.log(anagrams('the', 't H e!'));
+console.log(anagrams('The!', 'th e!!!'));
