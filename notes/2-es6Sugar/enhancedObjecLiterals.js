@@ -1,6 +1,9 @@
 // Create an object literal for a bookstor object that can calculate the invertory
 // value and can also find books values based off title.
 
+// Key and value that are the same such as inventory: inventory, you can delete
+// the colon and second inventory.
+
 function createBookstore(inventory) {
   return {
     inventory,
