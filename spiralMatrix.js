@@ -27,7 +27,6 @@ function matrix(n) {
     endCol--;
 
     for(let i = endCol; i >= startCol; i--) {
-      console.log(`current counter: ${counter}`);
       results[endRow][i] = counter;
       counter++;
     }
