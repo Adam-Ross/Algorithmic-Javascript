@@ -1,16 +1,15 @@
 // Do the fib.
-
+//
 function fib(n) {
-  const arr = [1,2];
+  const arr = [0,1];
   const mapper = {};
-  let count = 1;
-  for(let i = 2; i < n; i++) {
+  let count = 0;
+  for(let i = 2; i <= n; i++) {
     let a = arr[i - 1];
     let b = arr[i - 2];
     arr.push(a + b);
   }
 
-  console.log(arr);
   for(let elem in arr) {
     mapper[count] = arr[elem];
     count++;
@@ -18,4 +17,15 @@ function fib(n) {
   return mapper;
 }
 
-console.log(fib(1000));
+console.log(fib(10));
+
+// recursive solution.
+
+function fibr(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fibr(n - 1) + fibr(n - 2);
+}
+
+console.log(fibr(10));
