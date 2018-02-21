@@ -14,4 +14,5 @@ function reverseWords(str) {
   return reversedWordsArr.join(' ');
 }
 
-console.log(reverseWords('This should be reversed'));
+
+console.log(revereWords('This should be reversed'));
