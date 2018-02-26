@@ -1,0 +1,126 @@
+JSX example:
+
+const App = () => {
+  return <h1>Hello</h1>
+}
+
+The html looking tags within the function call are JSX.  JSX is a subset of JS and
+lets us use html looking tags within our javascript functions. -Really just JS
+behind the scenes, bable and webpack transpose it down to ES5 syntax for browsers.
+
+JSX cannot be interpreted by the browser.  Has to be translated into vanilla javascript. Why do JSX then?
+
+- Cause this is what produces the actual html that renders into the DOM. JSX gets turned into HTML, which is what the user ends up seeing.  It's a way for javascript to produce HTML.  Don't HAVE to write JSX, but syntax is way better:
+
+JSX:
+
+const App = () => {
+	<h1> hello</h1>
+}
+
+Vanilla JS (es5)
+
+var App = function App() {
+  React.createElement(
+    "h1",
+    null,
+    " hello"
+  );
+};
+
+See the difference?
+
+Again.
+
+JSX:
+
+const App = () => {
+  <ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ol>
+}
+
+Vanilla JS (es2015)
+
+var App = function App() {
+  React.createElement(
+    "ol",
+    null,
+    React.createElement(
+      "li",
+      null,
+      "1"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "2"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "3"
+    )
+  );
+};
+
+---------------------------------------------------------------------------------------------------------------
+Now, let's do some rendering of a small component.
+
+const App = () => {
+  <div> Hello world </div>
+}
+
+We need to render that to the dom.  First thing we need is a render statement.
+
+React.render(App) -- This will catch an error because we have not included react into our file.
+                    Error will say that react is not defined.  Need to include the module.
+
+Basically, at the top of the file, we want to say, hey, grab react from the node modules folder because I want access to all of it's built in methods.
+
+import React from 'react'; -- This is the import line.  It's because JS files and ES6 silos out all files,
+                              so if I want access to a variable in one file, I have to require it in another file.  Makes things easier.
+
+So, after react is imported, we can now use the React.render function, but still we get an error.
+
+To actually render something to the DOM, it is no longer good enough to just use the react library, now we have to use reactDOM library instead.  So, same thing, have to import the reactDOM library from our node Module.
+
+import ReactDOM from 'react-dom'; // Remember to use hyphen when calling a module, not camelCase.
+
+Now our render statement should look like so.
+
+ReactDOM.render(App);
+
+Now still though, we get an error - saying no, you passed in a class, but need to pass in an instance of the class.  So, component constants are classes, not to be passed and rendered, but instead to outline how to make instances of that class.  So, in order to fix our small bug, we need to pass an instance to ReactDOM.render
+
+ReactDOM.render(<App />);  Basically, we wrapped the app in a self closing jsx tag of < />
+
+Still, fuckin get an error message though - it says that target container is not a DOM element. Hmm, guess that means that we have to specify what dom element to render it to.
+
+Basically, it's an easy fix.  ReactDOM.render just takes a second argument. Let's look at some html real quick.
+
+<body>
+  <div class='container'></div> -- This container class is where all of our components will be rendered.
+</body>
+
+So, in our render function we just need to add a second argument that gives note of where we want to render the App in the HTML.
+
+ReactDOM.render(<App />, document.querySelector('.container'));
+
+Well, hot dog, it worked.  This is what the whole file should look like.
+
+                        import React from 'react';
+                        import ReactDOM from 'react-dom';
+
+                        const App = () => {
+                          return <div>hi </div>;
+                        }
+
+                        ReactDOM.render(<App />, document.querySelector('.container'));
+
+All of that to put hi on the screen.  Wheww!
+
+
+---------------------------------------------------------------------------------------------------------------
