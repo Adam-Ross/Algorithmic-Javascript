@@ -1,5 +1,19 @@
 // Capitalize every word in a given string.
 
+let word = 'word word word'
+
+function capitalize(str) {
+  let newStr = [];
+  str = str.split(' ');
+
+  for(let word of str) {
+    newStr.push(word[0].toUpperCase() + word.slice(1));
+  }
+  return newStr.join(' ');
+}
+
+console.log(capitalize(word));
+
 function cap(str) {
   let arr = str.split(' ');
   let newStr = [];

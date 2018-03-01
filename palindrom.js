@@ -10,8 +10,8 @@ function palindrome(str) {
   return str === reversed;
 }
 
-console.log(palindrome('acba')); // false
-console.log(palindrome('abba')); // true
+// console.log(palindrome('acba')); // false
+// console.log(palindrome('abba')); // true
 
 // Bit more nuanced (((spelled that wrong))) using the every function on the array prototype
 
