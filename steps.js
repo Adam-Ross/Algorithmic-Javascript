@@ -6,7 +6,7 @@
 //        '###'
 
 
-// iterative
+iterative
 function steps(n) {
   for(let row = 0; row < n; row++) {
     let stair = '';
@@ -24,7 +24,7 @@ function steps(n) {
 
 steps(25);
 
-// recursive
+recursive
 
 function step(n, row = 0, stair = '') {
   if(n === row) {
