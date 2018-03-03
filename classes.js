@@ -1,39 +1,66 @@
 // function Car(options) {
-//   this.title = options.title
+//   this.title = options.title;
 // }
 //
 // Car.prototype.drive = function() {
 //   return 'vroom'
 // }
 //
-// const car = new Car({title: 'Focus'});
+// function Ford(options) {
+//   Car.call(this, options);
+//   this.color = options.color;
+// }
 //
-// console.log(car);
-// console.log(car.drive());
+// Ford.prototype = Object.create(Car.prototype);
+// Ford.prototype.constructor = Ford;
+//
+// Ford.prototype.honk = function() {
+//   return 'honk';
+// }
+//
+//
+// const ford = new Ford({ color: 'red', title: 'focus'});
+//
+// console.log(ford);
+// console.log(ford.drive());
+// console.log(ford.honk());
 
-function Car(options) {
-  this.title = options.title;
+
+// That sucks, let's do it in es6 using classes instead of prototypical inheritance.
+
+class Car {
+
+  constructor( {title} ) {
+    this.title = title;
+  }
+
+  drive() {
+    return 'vroom';
+  }
+
+  getTitle() {
+    return `This car has a title of ${this.title}`;
+  }
+
 }
 
-Car.prototype.drive = function() {
-  return 'vroom'
+class Toyota extends Car{
+
+  constructor(options) {
+    super(options);
+    this.year = options.year;
+  }
+
+  stop() {
+    return 'screech'
+  }
 }
 
-function Ford(options) {
-  Car.call(this, options);
-  this.color = options.color;
-}
+const car = new Car({ title: 'M3'});
+console.log(car.title);
+console.log(car.getTitle());
 
-Ford.prototype = Object.create(Car.prototype);
-Ford.prototype.constructor = Ford;
-
-Ford.prototype.honk = function() {
-  return 'honk';
-}
-
-
-const ford = new Ford({ color: 'red', title: 'focus'});
-
-console.log(ford);
-console.log(ford.drive());
-console.log(ford.honk());
+const toyota = new Toyota({ year: 1999});
+console.log(toyota);
+console.log(toyota.drive());
+console.log(toyota.stop());
