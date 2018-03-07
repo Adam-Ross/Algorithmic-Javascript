@@ -1,20 +1,42 @@
-// build a pyramid.
+// build a pyramid with (n) levels.
+
+// for n = 3:
+// ---#---
+// --###--
+// -#####-
+
+// for n = 4:
+// ---#---
+// --###--
+// -#####-
+// #######
+
+// for n = 5:
+// ---#---
+// --###--
+// -#####-
+// #######
+//#########
+
+// And so on...
 
 function pyramid(n) {
-  const midPoint = Math.floor((2 * n - 1) / 2);
-  for(let row = 0; row < n; row++) {
+  const midPoint = Math.floor((n * 2 - 1) / 2);
 
-    let level = '';
+  for(row = 0; row < n; row++) {
+    let level = ''; // Start level as an empty string that you can add to.
 
-    for(let col = 0; col < n*2-1; col++) {
+    for(col = 0; col < n * 2 - 1; col++) {
       if(midPoint - row <= col && midPoint + row >= col) {
         level += '#';
       } else {
-        level += ' ';
+        level += '-';
       }
     }
     console.log(level);
   }
 }
 
-pyramid(10);
+pyramid(70);
+
+// pretty cool. Just watch again, walk through the code, and see why the midpoint is so important. Cheers.
