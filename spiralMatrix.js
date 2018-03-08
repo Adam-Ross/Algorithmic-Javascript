@@ -42,5 +42,5 @@ function matrix(n) {
 
   console.log(results);
 }
-matrix(25);
+matrix(6);
 // console.log(matrix(3));

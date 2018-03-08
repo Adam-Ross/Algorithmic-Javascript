@@ -1,0 +1,27 @@
+Notes - for all front end stuff.
+
+Bullshit html--
+
+Tags ---
+<h1> - basic text markup
+<p> is another block level element.
+<strong> - Makes text bold, replaced <b>.
+<em> - makes something italicized.
+
+
+lists ----
+
+<ol> - ordered list, has to have <li> - list items.
+<ul> - same thing, without numbers.
+
+Can nest <ul> and <ol>
+
+div and span ----
+
+<div> - allows you to group together content, just generic grouping tag.
+Div is block level, span is not, so span can be used to style inline.
+
+Attributes -----
+
+img tag <img src='somewebsite'>
+a tag <a href="https://google.com">Go to google.</a> - A tag has to be closed.
