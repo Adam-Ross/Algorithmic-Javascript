@@ -19,10 +19,12 @@ class Queue {
   remove() {
     return this.data.pop();
   }
+
+  peek() {
+    return this.data[this.data.length - 1];
+  }
 }
 
-let tester = new Queue;
-tester.add('This is something.');
-tester.add('This is something else.');
-tester.remove();
-console.log(tester);
+
+
+module.exports = Queue;
