@@ -25,7 +25,7 @@ function ransomNote(note, magazineText) {
   console.log(noteIsPossible);
 }
 
-var note = 'bring the money downtown'
-var magazineText = 'the downtown is a cool place to visit but make sure that you bring money'
+let note = 'I want the money'
+let magazineText = 'Do you want money and fame?  For sure you do!  I can say from my years in the INFOtainment business, there is no quicker way to get it than spreading MISINFO - I mean, like, big leauge!'
 
 ransomNote(note, magazineText);
