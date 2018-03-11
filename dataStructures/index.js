@@ -26,14 +26,42 @@ class LinkedList {
     }
     return counter;
   }
+
+  getFirst() {
+    if(this.head) {
+      return this.head.data;
+    }
+    return 'There is no head present - might try running the insert first method.'
+  }
+
+  getLast() {
+    if(!this.head) {
+      return 'There is currently no head.'
+    }
+    if(!this.head.next) {
+      return 'The head is the only node.';
+    }
+    let previous = this.head;
+    let node = this.head.next;
+
+    while(node.next) {
+      previous = node;
+      node = node.next;
+    }
+    return node;
+  }
+
+
 }
 
 module.exports = { Node, LinkedList };
 
 list = new LinkedList;
-list.insertFirst('The head.');
-list.insertFirst('1 New head.');
-list.insertFirst('2 New head.');
-list.insertFirst('3 New head.');
-list.insertFirst('4 New head.');
-console.log(list.size());
+list2 = new LinkedList;
+list.insertFirst('data');
+list.insertFirst('data1', this.head);
+list.insertFirst('data2', this.head);
+list.insertFirst('data3', this.head);
+list.insertFirst('data4', this.head);
+
+console.log(list.getLast());
